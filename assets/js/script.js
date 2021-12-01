@@ -1,29 +1,30 @@
-const createEl = require('./domMethods');
-const img1 = require('../img/food-table.jpg');
-const img2 = require('../img/grill.jpg');
-
 require('bootstrap');
+// const img1 = require('../img/food-table.jpg');
+// const img2 = require('../img/grill.jpg');
+const img1 = require('../../assets/img/food-table.jpg');
+const img2 = require('../../assets/img/grill.jpg');
 
-// First image is hard coded in index.html
-const carouselSlides = [
-   {
-      title: 'We travel all over the US',
-      subtitle: 'Check out our schedule!',
-      img: img1,
-      btnText: 'View Schedule',
-      btnUrl: 'schedule.html',
-   },
-   {
-      title: 'Our food is seriously the bomb!',
-      subtitle: 'What are you waiting for?',
-      img: img2,
-      btnText: 'Purchase Tickets',
-      btnUrl: 'tickets.html',
-   },
-];
+$(document).ready(function () {
+   // First image is hard coded in index.html
+   const carouselSlides = [
+      {
+         title: 'We travel all over the US',
+         subtitle: 'Check out our schedule!',
+         img: img1,
+         btnText: 'View Schedule',
+         btnUrl: 'schedule.html',
+      },
+      {
+         title: 'Our food is seriously the bomb!',
+         subtitle: 'What are you waiting for?',
+         img: img2,
+         btnText: 'Purchase Tickets',
+         btnUrl: 'tickets.html',
+      },
+   ];
 
-carouselSlides.forEach((slide, i) => {
-   $('.carousel-inner').append(`
+   carouselSlides.forEach((slide, i) => {
+      $('.carousel-inner').append(`
   <div class="carousel-item fullscreen-carousel" style="background-image: url('${slide.img}')">
     <div class="d-flex h-100 align-items-center justify-content-center carousel-caption">
         <div class="container">
@@ -41,4 +42,5 @@ carouselSlides.forEach((slide, i) => {
         </div>
     </div>
   </div>`);
+   });
 });
